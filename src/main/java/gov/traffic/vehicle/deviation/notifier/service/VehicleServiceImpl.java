@@ -1,5 +1,7 @@
 package gov.traffic.vehicle.deviation.notifier.service;
 
+import gov.traffic.vehicle.deviation.notifier.exception.ApiErrors;
+import gov.traffic.vehicle.deviation.notifier.exception.VehicleApiException;
 import gov.traffic.vehicle.deviation.notifier.model.VehicleDto;
 import gov.traffic.vehicle.deviation.notifier.repository.VehicleRepository;
 import gov.traffic.vehicle.deviation.notifier.repository.entity.VehicleEntity;
@@ -33,10 +35,11 @@ public class VehicleServiceImpl implements VehicleService {
 
     private void validateRequest(VehicleDto vehicle) {
         if (vehicle.getVehicleNumber().isEmpty()) {
-            throw new RuntimeException("vehicle number is required");
+            throw new VehicleApiException(ApiErrors.BAD_REQUEST, "vehicleNumber is required.");
         }
         String vehicleNumber = vehicle.getVehicleNumber();
-        vehicleRepository.findByVehicleNumber(vehicleNumber);
+        Mono<VehicleEntity> byVehicleNumber = vehicleRepository.findByVehicleNumber(vehicleNumber);
+        byVehicleNumber.hasElement().map(aBoolean -> aBoolean.booleanValue())
     }
 
     @Override
