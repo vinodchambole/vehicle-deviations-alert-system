@@ -9,6 +9,9 @@ public enum ApiErrors {
     BAD_REQUEST(400000, HttpStatus.BAD_REQUEST),
     INVALID_ARGUMENTS(400001, HttpStatus.BAD_REQUEST),
     //******************************** Application Errors *********************
+    CONFLICT(400002, HttpStatus.CONFLICT),
+    NOT_FOUND(400002, HttpStatus.NOT_FOUND),
+
 
     //******************************** Server Errors *************************
     INTERNAL_SERVER_ERROR(500000, HttpStatus.INTERNAL_SERVER_ERROR);

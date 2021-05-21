@@ -17,6 +17,8 @@ public class VehicleDto {
 
     private String color;
 
+    private String manufacturer;
+
     private String ownerAdharId;
 
     private String ownerName;

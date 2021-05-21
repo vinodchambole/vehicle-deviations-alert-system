@@ -31,6 +31,8 @@ public class VehicleEntity {
     @Column
     private String color;
     @Column
+    private String manufacturer;
+    @Column
     private String ownerAdharId;
     @Column
     private String ownerName;

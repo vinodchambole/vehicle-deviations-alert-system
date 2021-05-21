@@ -1,10 +1,10 @@
 package gov.traffic.vehicle.deviation.notifier.controller;
 
 import gov.traffic.vehicle.deviation.notifier.model.VehicleDto;
+import gov.traffic.vehicle.deviation.notifier.model.VehicleResource;
 import gov.traffic.vehicle.deviation.notifier.repository.entity.VehicleEntity;
 import gov.traffic.vehicle.deviation.notifier.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -17,10 +17,10 @@ public class VehicleController {
     private VehicleService vehicleService;
 
     @PostMapping
-    public Mono<ResponseEntity<VehicleEntity>> addVehicle(@RequestBody VehicleDto vehicle) {
-        return vehicleService.addVehicle(vehicle)
+    public Mono<ResponseEntity<VehicleResource>> addVehicle(@RequestBody Mono<VehicleDto> vehicle) {
+        return vehicle.flatMap(vehicleDto -> vehicleService.addVehicle(vehicleDto))
                 .map(ResponseEntity::ok)
-                .doOnError(ex -> Mono.just(ResponseEntity.status(HttpStatus.BAD_REQUEST).build()));
+                .log();
     }
 
     @GetMapping("/{vehicleId}")
