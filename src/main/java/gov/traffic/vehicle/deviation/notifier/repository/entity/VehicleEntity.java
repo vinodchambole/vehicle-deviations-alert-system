@@ -19,6 +19,8 @@ import java.time.Instant;
 public class VehicleEntity {
 
     @Id
+    private long id;
+    @Column
     private String vehicleNumber;
     @Column
     private String vehicleName;
@@ -29,11 +31,9 @@ public class VehicleEntity {
     @Column
     private String color;
     @Column
-    private String ownerId;
+    private String ownerAdharId;
     @Column
     private String ownerName;
-    @Column
-    private String fasttagId;
     @Column
     private Fuel fuel;
 }

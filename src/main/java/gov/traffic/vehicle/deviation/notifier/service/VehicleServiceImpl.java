@@ -15,18 +15,28 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public Mono<VehicleEntity> addVehicle(VehicleDto vehicle) {
+
+        validateRequest(vehicle);
         VehicleEntity vehicleEntity = VehicleEntity.builder()
                 .vehicleNumber(vehicle.getVehicleNumber())
                 .vehicleName(vehicle.getVehicleName())
                 .makeDate(vehicle.getMakeDate())
                 .regDate(vehicle.getRegDate())
                 .ownerName(vehicle.getOwnerName())
-                .ownerId(vehicle.getOwnerId())
+                .ownerAdharId(vehicle.getOwnerAdharId())
                 .color(vehicle.getColor())
-                .fasttagId(vehicle.getFasttagId())
                 .fuel(vehicle.getFuel())
                 .build();
+
         return vehicleRepository.save(vehicleEntity);
+    }
+
+    private void validateRequest(VehicleDto vehicle) {
+        if (vehicle.getVehicleNumber().isEmpty()) {
+            throw new RuntimeException("vehicle number is required");
+        }
+        String vehicleNumber = vehicle.getVehicleNumber();
+        vehicleRepository.findByVehicleNumber(vehicleNumber);
     }
 
     @Override
