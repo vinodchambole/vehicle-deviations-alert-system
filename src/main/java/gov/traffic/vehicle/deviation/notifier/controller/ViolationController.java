@@ -1,5 +1,6 @@
 package gov.traffic.vehicle.deviation.notifier.controller;
 
+import gov.traffic.vehicle.deviation.notifier.model.VehicleViolationInfo;
 import gov.traffic.vehicle.deviation.notifier.model.ViolationDto;
 import gov.traffic.vehicle.deviation.notifier.service.ViolationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,11 @@ public class ViolationController {
         return violations.
                 flatMap(violationsList -> violationService.addVoilations(violationsList, vehicleNumber)
                         .map(ResponseEntity::ok));
+    }
+
+    @GetMapping("/{vehicleNumber}")
+    public Mono<VehicleViolationInfo> getViolations(@PathVariable String vehicleNumber) {
+        return violationService.getViolations(vehicleNumber);
     }
 
 
