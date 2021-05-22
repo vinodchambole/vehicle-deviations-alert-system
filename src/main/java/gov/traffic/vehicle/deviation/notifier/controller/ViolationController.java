@@ -33,5 +33,4 @@ public class ViolationController {
         return ResponseEntity.accepted().build();
     }
 
-
 }

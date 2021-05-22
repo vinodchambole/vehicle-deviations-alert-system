@@ -22,3 +22,15 @@ CREATE TABLE IF NOT EXISTS violations (
   PRIMARY KEY (id),
  CONSTRAINT violations_fk FOREIGN KEY (vehicle_number) REFERENCES vehicle (vehicle_number)
 ) DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
+
+CREATE TABLE IF NOT EXISTS vehicle_owner (
+  owner_adhar_id varchar(45) NOT NULL,
+  owner_name varchar(45) DEFAULT NULL,
+  phone_number varchar(45) DEFAULT NULL,
+  address varchar(45) DEFAULT NULL,
+  fasttag_id varchar(45) DEFAULT NULL,
+  fasttag_balance DOUBLE NOT NULL,
+  PRIMARY KEY (owner_adhar_id)
+) DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+
