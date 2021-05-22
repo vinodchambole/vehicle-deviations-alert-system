@@ -27,5 +27,11 @@ public class ViolationController {
         return violationService.getViolations(vehicleNumber);
     }
 
+    @PostMapping("/{vehicleNumber}/notify")
+    public ResponseEntity<Void> notifyViolations(@PathVariable String vehicleNumber, @RequestHeader String location) {
+        violationService.notifyViolations(vehicleNumber, location);
+        return ResponseEntity.accepted().build();
+    }
+
 
 }

@@ -8,4 +8,6 @@ public interface ViolationService {
     Mono<String> addVoilations(ViolationDto violationsFlux, String vehicleNumber);
 
     Mono<VehicleViolationInfo> getViolations(String vehicleNumber);
+
+    void notifyViolations(String vehicleNumber, String location);
 }
