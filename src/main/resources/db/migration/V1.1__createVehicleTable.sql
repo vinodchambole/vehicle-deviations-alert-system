@@ -12,3 +12,13 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
    PRIMARY KEY (`id`),
    UNIQUE KEY `vehicle_number_UNIQUE` (`vehicle_number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci ROW_FORMAT=DYNAMIC;
+
+CREATE TABLE IF NOT EXISTS violations (
+  id bigint(10) NOT NULL AUTO_INCREMENT,
+  type varchar(255) DEFAULT NULL,
+  fine_amount DOUBLE NOT NULL,
+  violation_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP(),
+  vehicle_number varchar(45) NOT NULL,
+  PRIMARY KEY (id),
+ CONSTRAINT violations_fk FOREIGN KEY (vehicle_number) REFERENCES vehicle (vehicle_number)
+) DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;

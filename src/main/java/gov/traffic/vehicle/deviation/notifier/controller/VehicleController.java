@@ -23,9 +23,9 @@ public class VehicleController {
                 .log();
     }
 
-    @GetMapping("/{vehicleId}")
-    public Mono<ResponseEntity<VehicleEntity>> getVehicle(@PathVariable String vehicleId) {
-        return vehicleService.getVehicle(vehicleId)
+    @GetMapping("/{vehicleNumber}")
+    public Mono<ResponseEntity<VehicleEntity>> getVehicle(@PathVariable String vehicleNumber) {
+        return vehicleService.getVehicle(vehicleNumber)
                 .map(ResponseEntity::ok)
                 .switchIfEmpty(Mono.just(ResponseEntity.notFound().build()));
     }

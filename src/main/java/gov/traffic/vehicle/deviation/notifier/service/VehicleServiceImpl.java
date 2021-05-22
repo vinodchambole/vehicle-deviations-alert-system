@@ -51,6 +51,6 @@ public class VehicleServiceImpl implements VehicleService {
     @Override
     public Mono<VehicleEntity> getVehicle(String vehicleId) {
         return vehicleRepository.findByVehicleNumber(vehicleId)
-                .switchIfEmpty(Mono.error(() -> new VehicleApiException(ApiErrors.NOT_FOUND, "vehicle data with does not exist.")));
+                .switchIfEmpty(Mono.error(() -> new VehicleApiException(ApiErrors.NOT_FOUND, "Vehicle not found with given number.")));
     }
 }
