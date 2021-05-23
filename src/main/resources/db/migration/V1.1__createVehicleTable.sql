@@ -34,3 +34,15 @@ CREATE TABLE IF NOT EXISTS vehicle_owner (
   PRIMARY KEY (owner_adhar_id)
 ) DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811110000', 'Ram', '1234567890', 'Bidar', '1111111111', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811111111', 'Ram', '1234567890', 'Bidar', '2222222222', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811112222', 'Ram', '1234567890', 'Bidar', '3333333333', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811113333', 'Ram', '1234567890', 'Bidar', '4444444444', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811114444', 'Ram', '1234567890', 'Bidar', '5555555555', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811115555', 'Ram', '1234567890', 'Bidar', '6666666666', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811116666', 'Ram', '1234567890', 'Bidar', '7777777777', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811117777', 'Ram', '1234567890', 'Bidar', '8888888888', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811118888', 'Ram', '1234567890', 'Bidar', '9999999999', '10000.00');
+INSERT INTO `vehicle`.`vehicle_owner` (`owner_adhar_id`, `owner_name`, `phone_number`, `address`, `fasttag_id`, `fasttag_balance`) VALUES ('1234456811119999', 'Ram', '1234567890', 'Bidar', '0000000000', '10000.00');
+
+
