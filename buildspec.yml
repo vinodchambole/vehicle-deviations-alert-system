@@ -1,17 +1,13 @@
-# This file controls the AWS CodeBuild
 version: 0.2
 phases:
-  pre_build:
-    commands:
-      - echo "Entered the pre-build phase"
   build:
     commands:
-      - echo "Entered build phase"
-      - mvn clean install
+      - echo Entered the build phase...
+      - mvn clean package
   post_build:
     commands:
-      - echo "Entered the post-build phase"
-
+      - echo Build completed successfully
 artifacts:
   files:
     - target/vehicle-deviation-notifier-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
