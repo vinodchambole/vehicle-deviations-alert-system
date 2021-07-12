@@ -11,7 +11,7 @@ class VehicleEntityDeviationNotifierApplicationTests {
 	}
 	
 	@Test
-	void spample tests() {
+	void sampleTests() {
 	}
 
 }
