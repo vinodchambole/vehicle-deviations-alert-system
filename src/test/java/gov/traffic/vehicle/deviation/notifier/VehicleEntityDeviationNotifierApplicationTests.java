@@ -9,5 +9,9 @@ class VehicleEntityDeviationNotifierApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+	
+	@Test
+	void spample tests() {
+	}
 
 }
