@@ -7,12 +7,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './gradlew assemble'
+                sh 'mvn clean package'
+                sh 'echo build sucess'
             }
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh 'mvn test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'java -jar target/vehicle-deviation-notifier-0.0.1-SNAPSHOT.jar'
             }
         }
     }
