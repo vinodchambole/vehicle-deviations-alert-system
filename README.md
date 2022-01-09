@@ -25,7 +25,7 @@
    2) deductFastTagBalance: Deduct the fasttag balance.
 
 #Flow chat
-![image](C:\Users\vcham\OneDrive\Documents\Vehicle deviation alert system flowchat.drawio.png))
+![image](src/main/resources/Vehicle deviation alert system flowchat.drawio.png))
 
 # aws ci-cd used
 ![image](https://user-images.githubusercontent.com/37335021/119383974-a6fa0a00-bce1-11eb-8446-fb2273ed0f26.png)
