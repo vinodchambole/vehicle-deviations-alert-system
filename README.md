@@ -24,7 +24,7 @@
    1) getViolations: used to get violations by adhar number of owner.
    2) deductFastTagBalance: Deduct the fasttag balance.
 
-#Flow chat
+# Flow chat
 ![image](src/main/resources/Vehicle deviation alert system flowchat.drawio.png))
 
 # aws ci-cd used
