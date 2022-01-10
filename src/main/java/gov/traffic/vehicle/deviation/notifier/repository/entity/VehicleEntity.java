@@ -33,7 +33,7 @@ public class VehicleEntity {
     @Column
     private String manufacturer;
     @Column
-    private String ownerAdharId;
+    private String ownerAadharId;
     @Column
     private String ownerName;
     @Column

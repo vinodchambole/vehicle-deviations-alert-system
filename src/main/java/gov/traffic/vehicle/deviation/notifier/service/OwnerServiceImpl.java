@@ -16,15 +16,15 @@ public class OwnerServiceImpl implements OwnerService {
     private OwnerRepository ownerRepository;
 
     @Override
-    public Mono<VehicleOwnerDto> getOwner(String adharNumber) {
-        return ownerRepository.findById(adharNumber)
+    public Mono<VehicleOwnerDto> getOwner(String aadharNumber) {
+        return ownerRepository.findById(aadharNumber)
                 .map(this::onvertToDto)
                 .switchIfEmpty(Mono.error(() -> new VehicleApiException(ApiErrors.NOT_FOUND, "Owner data not found with given adhar id.")));
     }
 
     @Override
-    public Mono<String> deductFasttagBalance(String adharNumber, Double fineAmount) {
-        return ownerRepository.findById(adharNumber)
+    public Mono<String> deductFasttagBalance(String aadharNumber, Double fineAmount) {
+        return ownerRepository.findById(aadharNumber)
                 .map(vehicleOwnerEntity -> {
                     Double fasttagBalance = vehicleOwnerEntity.getFasttagBalance();
                     double result = fasttagBalance - fineAmount;
@@ -37,7 +37,7 @@ public class OwnerServiceImpl implements OwnerService {
 
     private VehicleOwnerDto onvertToDto(VehicleOwnerEntity vehicleOwnerEntity) {
         return VehicleOwnerDto.builder()
-                .adharNumber(vehicleOwnerEntity.getOwnerAdharId())
+                .aadharNumber(vehicleOwnerEntity.getOwnerAdharId())
                 .name(vehicleOwnerEntity.getOwnerName())
                 .phNumber(vehicleOwnerEntity.getPhoneNumber())
                 .address(vehicleOwnerEntity.getAddress())

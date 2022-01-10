@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `fuel` varchar(45) NOT NULL,
   `make_date` datetime(3) NOT NULL,
   `manufacturer` varchar(45) NOT NULL,
-  `owner_adhar_id` varchar(45) NOT NULL,
+  `owner_aadhar_id` varchar(45) NOT NULL,
   `owner_name` varchar(45) NOT NULL,
    PRIMARY KEY (`id`),
    UNIQUE KEY `vehicle_number_UNIQUE` (`vehicle_number`)

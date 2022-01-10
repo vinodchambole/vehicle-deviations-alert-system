@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class VehicleOwnerDto {
-    private String adharNumber;
+    private String aadharNumber;
     private String name;
     private String phNumber;
     private String address;

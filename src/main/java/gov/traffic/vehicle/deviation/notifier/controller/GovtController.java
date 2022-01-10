@@ -13,13 +13,13 @@ public class GovtController {
     @Autowired
     private OwnerService ownerService;
 
-    @GetMapping("/vehicle-owner/{adharNumber}")
-    public Mono<VehicleOwnerDto> getViolations(@PathVariable String adharNumber) {
-        return ownerService.getOwner(adharNumber);
+    @GetMapping("/vehicle-owner/{aadharNumber}")
+    public Mono<VehicleOwnerDto> getViolations(@PathVariable String aaadharNumber) {
+        return ownerService.getOwner(aaadharNumber);
     }
 
-    @GetMapping("/vehicle/fasttag-deduct/{adharNumber}")
-    public Mono<String> deductFastTagBalance(@PathVariable String adharNumber, @RequestParam Double fineAmount) {
-        return ownerService.deductFasttagBalance(adharNumber, fineAmount);
+    @GetMapping("/vehicle/fasttag-deduct/{aadharNumber}")
+    public Mono<String> deductFastTagBalance(@PathVariable String aadharNumber, @RequestParam Double fineAmount) {
+        return ownerService.deductFasttagBalance(aadharNumber, fineAmount);
     }
 }
