@@ -44,8 +44,6 @@
             <artifactId>aws-java-sdk-sqs</artifactId>
             <version>1.11.1000</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -61,7 +59,6 @@
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
-
         <!--r2dbc mysql library-->
         <dependency>
             <groupId>dev.miku</groupId>
@@ -73,15 +70,12 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
             <version>5.2.4</version>
         </dependency>
-
     </dependencies>
-
 
     <build>
         <plugins>
